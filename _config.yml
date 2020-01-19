@@ -1,6 +1,7 @@
 collections:
-  authors:
+  posts:
     output: true
+    permalink: /blog/:slug
 defaults:
   - scope:
       path: ""
