@@ -70,7 +70,7 @@ I found a helpful post on the Unity forums from someone having the exact same is
 LAB_EnemyPrototype
 ├── LAB_Enemy (Patrol)
 │   └── Visuals
-├── EnemyAggroRange
+├── <span style="color: #e83e8c">EnemyAggroRange</span>
 ├── Left Bound
 └── Right Bound
 </pre>
