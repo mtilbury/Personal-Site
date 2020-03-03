@@ -88,8 +88,46 @@ One answer on the forum post suggested putting the collider on a sibling object 
 </div>
 
 #### Confluence Documentation
+Since this bugfix will break previously written code, [I wrote a Confluence page describing the new, correct usage](https://studio.eecs.umich.edu/confluence/display/~mtilbury/EnemyAggroRange+Component+Usage). Most of it has already been written here: I talk about the reasons why I had to change it and describe how I did it. I also feature an image showing how the new implmentation should look in the editor. I made this page because Nico pinged me on discord because he was getting an error due to my changes. I responded to him but wanted to have a resource ready in case anybody else had problems.
+
+<div class="image-container text-center">
+<img src="/assets/images/preAlphaFinal/AggroEditor.png" width="600" alt="An editor screenshot showing how to use the new EnemyAggro component/prefab." class="img-fluid">
+<p class="figure-caption">An editor screenshot showing how to use the new EnemyAggro component/prefab.</p>
+</div>
+
 
 ## Playtest Feedback
-At the February 22<sup>nd</sup> studio meeting, a survey was released for any playtesting feedback we had. While this isn't directly related to the programming I did this sprint, I spent a lot of time writing my thoughts on the current build of the game and recording gameplay footage to support my thoughts. 
+At the February 22<sup>nd</sup> studio meeting, a survey was released for any playtesting feedback we had. While this isn't directly related to the programming I did this sprint, I spent a lot of time writing my thoughts on the current build of the game and recording gameplay footage to support my thoughts. It was submitted in a Google Form so I don't have direct access to what I said, but I can paraphrase some of the more important feedback I gave:
 
-## Enemy Death Component
+<blockquote>For the first build, there was a change to the controls which I believe makes the teleportation mechanic less intuitive and more difficult to use effectively. Your teleportation direction is controlled with the left stick which also controls your player's movement. Sometimes you want to move to the right but quickly change your teleportation direction. By having both of these bound to the same analog stick, it becomes difficult to change your momentum quickly. Since, from my understanding, a lot of the gameplay will revolve around avoiding projectiles and precise platforming, the player is required to use the teleport mechanic to move in the opposite direction they are moving.
+<br><br>
+I suggested that the right stick should be used to control the teleport direction independently of the player's movement. For me, this is way more intuitive since it mimics the controls of a twin-stick shooter. There's a visual indication of your teleport direction as well which invokes the image of a reticle you might see in one of these shooters. Also, this control scheme was used earlier in development so I already played the game this way. This might make me biased since I'm used to it already, but it also showed me how jarring it was when it was taken away.</blockquote>
+
+<div class="image-container text-center">
+<video width="350" style="margin: none" alt="The player swings their sword within the enemy's aggro radius, but they do not take damage." loop autoplay>
+  <source src="/assets/images/preAlphaFinal/Jumping.mp4" type="video/mp4">
+</video>
+<p class="figure-caption">The player jumps. Notice how the jumping animation takes a while to fully come out.</p>
+</div>
+
+<blockquote>Mechanically, the jump is very responsive. It happens as soon as the player presses the button. However, the jump animation is fairly long and makes the jump *feel* less responsive than it actually is. I suggested shortening the jump animation substantially—maybe cutting it to two or three frames. The animation itself looks great, but I think the timing just makes it sluggish.</blockquote>
+
+<div class="image-container text-center">
+<video width="350" style="margin: none" alt="The player slides against the wall and does a wall jump." loop autoplay>
+  <source src="/assets/images/preAlphaFinal/WallJump.mp4" type="video/mp4">
+</video>
+<p class="figure-caption">The player slides against the wall, but the collision appears off. The animation doesn't always update.</p>
+</div>
+
+<blockquote>The wall jump works well, but there were some problems with the animations I found. It's inconsistent, but sometimes the player does not enter the wall slide animation when they should. Instead, they just hold a single frame from their idle or jump pose. Also, the collision on the walls looks off since the player can walk so far into them before they stop.</blockquote>
+
+<div class="image-container text-center">
+<video width="500" style="margin: none" alt="The background has a nice parallax effect, but it glitches out sometimes." loop autoplay controls>
+  <source src="/assets/images/preAlphaFinal/Parallax.mp4" type="video/mp4">
+</video>
+<p class="figure-caption">The background has a nice parallax effect, but it glitches out sometimes.</p>
+</div>
+
+<blockquote>One of the questions in the survey asked specifically about the parallax effect. I think the painted background looks great and the parallax effect is juicy. I did find some glitchy behavior as shown in the video above. Also, I think the background is a little blurry from having been zoomed in so much to make the parallax work.</blockquote>
+
+<!-- ## Enemy Death Component -->
