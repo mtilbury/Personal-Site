@@ -16,8 +16,6 @@ The main tasks I tackled this sprint were the creation of a component that fires
   * Wrote confluence documentation on its new usage
 * Submitted detailed playtest feedback
   * I had a lot of feedback based on my experience playing the latest build regarding bugs and potential UX improvements
-* Wrote enemy death script
-  * Runs when any enemy dies. Despawns it, shows a corpse, and plays a particle effect
 
 ## Projectile Component
 My goal was to create a component for instantiating projectiles and firing them off at regular intervals. I was specifically assigned this task to be used for the Gungnir enemy, but I figured I should make the script as generic as possible so it could be reused on other enemies/obstacles that use projectiles. I read the Confluence documentation for the accepted enemy designs so I know that they can probably reuse my code. After reading the Gungnir design spec, I spoke with Nikhil about which mechanics from the enemy I would be implementing. He said that it was really only the projectile component. It seemed like a lot of the details from the spec (e.g. the Gungnir stops firing when the player approaches) weren't going to be implemented—at least not in this sprint.
